@@ -2,6 +2,9 @@ import React, {Component} from "react";
 
 import "./LocationItem.css";
 
+/**
+ * элемент списка локаций
+ */
 class LocationItem extends Component {
 
     constructor(props) {

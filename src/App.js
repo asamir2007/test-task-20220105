@@ -18,9 +18,19 @@ class App extends React.Component {
         }
     }
 
+    /**
+     * ссылка на инстанс карты
+     */
     mapRef
+    /**
+     * ид последней добавленной локации
+     */
     currentPositionId = 0
 
+    /**
+     * добавить локацию
+     * @param a имя локации
+     */
     addPosition = (a) => {
         if (a.value.length<1) {
             alert('введите название точки')
@@ -35,6 +45,10 @@ class App extends React.Component {
 
     }
 
+    /**
+     * нажата кнопка удалить локацию
+     * @param id
+     */
     onRemovePosition(id) {
         let l = this.state.list
         for (var i = 0; i < l.length; i++) {
@@ -48,6 +62,10 @@ class App extends React.Component {
         this.setState({list: l})
     }
 
+    /**
+     * пользователь изменил порядок локаций
+     * @param list
+     */
     onItemsOrderUpdated(list){
         this.mapRef.removeAllMarks()
         this.mapRef.addMarks(list.sort((a, b) => a.order - b.order))

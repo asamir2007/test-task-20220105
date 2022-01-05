@@ -3,12 +3,13 @@ import "./LocationItemsList.css";
 import React, {Component} from "react";
 import LocationItem from "./LocationItem";
 
-
+/**
+ * список локаций
+ */
 class LocationItemsList extends Component {
     constructor(props) {
         super(props)
         this.dragStart = this.dragStart.bind(this)
-        this.dragEnter = this.dragEnter.bind(this)
         this.dragDrop = this.dragDrop.bind(this)
         this.componentUpdated = this.componentUpdated.bind(this)
         this.state={list:this.props.list}
@@ -23,18 +24,24 @@ class LocationItemsList extends Component {
     componentUpdated() {
         let l = this.props.list;
         for (let i = 0; i < l.length; i++) {
+            //добавить порядковый номер для render
             l[i].order = i
         }
     }
 
+    /**
+     * юзер начал перетаскивание элемента локации
+     * @param e
+     */
     dragStart(e) {
         //console.log('dragStart ' + e.currentTarget.id)
         this.setState({dragId: e.currentTarget.id})
     }
 
-    dragEnter() {
-    }
-
+    /**
+     * юзер закончил перетаскивание элемента локации
+     * @param e
+     */
     dragDrop(e) {
         //console.log('drop '+e.currentTarget.id)
         let l = this.props.list;
