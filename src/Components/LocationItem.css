@@ -1,0 +1,9 @@
+#bClose {
+    margin-left: auto;
+    order: 2;
+}
+.locationItem{
+    margin-top: 5px;
+    width: 200px;
+    display: flex;
+}

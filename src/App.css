@@ -1,0 +1,7 @@
+.App {
+    width: 100%;
+    display: flex;
+}
+#mapControls {
+    margin-right: 5px;
+}

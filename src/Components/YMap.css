@@ -1,0 +1,8 @@
+.mapsContainer {
+    height: 400px;
+    border: 1px solid;
+}
+#map {
+    width:400px;
+    height:400px;
+}
